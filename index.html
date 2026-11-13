@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Cafeteria</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Zeyada&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="home">
+        <div class="logo">
+            <a href="#">
+                <h1>Cafeteria doo</h1>
+            </a>
+        </div>
+
+        <nav class="nav-bar">
+            <a href="#home" class="ativo">Home</a>
+            <a href="#secao-cardapio">Cardápio</a>
+            <a href="#pratos">Pratos do dia</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="div-banner">
+       <img class="banner" src="img/Brown Beige Modern Coffee Presentation.png" alt="Banner da cafeteria com xícaras de café">
+    </div>
+
+    <section id="secao-cardapio">
+        <div class="borda"></div>
+        <h1 class="h1">Clique para ver nosso cardápio</h1>
+        <br>
+
+        <div class="div-button">
+            <button id="botao" class="btn-cardapio" type="button"><p>Cardápio</p></button>
+        </div>
+
+        <div id="cardapio">
+            <h2>Cafés</h2>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Espresso</h3>
+                    <p>Café curto, intenso e encorpado</p>
+                </div>
+                <span class="preco">R$ 6,00</span>
+            </div>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Cappuccino</h3>
+                    <p>Espresso, leite vaporizado e espuma cremosa</p>
+                </div>
+                <span class="preco">R$ 12,00</span>
+            </div>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Mocha</h3>
+                    <p>Espresso com chocolate e leite</p>
+                </div>
+                <span class="preco">R$ 14,00</span>
+            </div>
+
+            <h2>Gelados</h2>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Frappé de caramelo</h3>
+                    <p>Café batido com gelo e calda de caramelo</p>
+                </div>
+                <span class="preco">R$ 16,00</span>
+            </div>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Cold brew</h3>
+                    <p>Café extraído a frio, servido com gelo</p>
+                </div>
+                <span class="preco">R$ 13,00</span>
+            </div>
+
+            <h2>Para acompanhar</h2>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Pão de queijo</h3>
+                    <p>Quentinho, porção com 4 unidades</p>
+                </div>
+                <span class="preco">R$ 10,00</span>
+            </div>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Croissant</h3>
+                    <p>Folhado, com manteiga</p>
+                </div>
+                <span class="preco">R$ 11,00</span>
+            </div>
+            <div class="item">
+                <div class="item-info">
+                    <h3>Bolo de cenoura</h3>
+                    <p>Com cobertura de chocolate</p>
+                </div>
+                <span class="preco">R$ 12,00</span>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+<section id="pratos">
+    <div class="borda"></div>
+    <h1 class="h1">Pratos do dia</h1>
+
+    <div class="janela">
+        <div class="trilho">
+            <article class="card">
+                <h3>Quiche de queijo</h3>
+                <p>Massa crocante com recheio cremoso de queijo</p>
+                <span class="preco">R$ 18,00</span>
+            </article>
+            <article class="card">
+                <h3>Sanduíche natural</h3>
+                <p>Pão integral, frango desfiado e salada</p>
+                <span class="preco">R$ 16,00</span>
+            </article>
+            <article class="card">
+                <h3>Torta de frango</h3>
+                <p>Fatia generosa, servida quentinha</p>
+                <span class="preco">R$ 15,00</span>
+            </article>
+            <article class="card">
+                <h3>Panini de presunto</h3>
+                <p>Presunto, queijo e orégano, na chapa</p>
+                <span class="preco">R$ 19,00</span>
+            </article>
+            <article class="card">
+                <h3>Salada caprese</h3>
+                <p>Tomate, muçarela de búfala e manjericão</p>
+                <span class="preco">R$ 20,00</span>
+            </article>
+            <article class="card">
+                <h3>Wrap de frango</h3>
+                <p>Tortilha recheada com frango e molho leve</p>
+                <span class="preco">R$ 17,00</span>
+            </article>
+        </div>
+    </div>
+
+    <div class="controles">
+        <button id="anterior" class="btn-seta" type="button" aria-label="Pratos anteriores">&#8249;</button>
+        <button id="proximo" class="btn-seta" type="button" aria-label="Próximos pratos">&#8250;</button>
+    </div>
+</section>
+<footer>
+    <h1>Cafeteria doo</h1>
+    <p>Tome seu cafe com gosto</p>
+    <div class="borda"></div>
+    <div class="borda-1"></div>
+
+</footer>
+    <script src="java/script.js"></script>
+</body>
+</html>

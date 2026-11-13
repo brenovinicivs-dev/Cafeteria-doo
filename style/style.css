@@ -1,0 +1,490 @@
+:root {
+    --cor-primaria: #6F4E37;
+    --cor-secundaria: #A47148;
+    --cor-terciaria: #C8A27A;
+    --amarelo: #EFB810;
+
+    --cor-fundo: #F5EFE6;
+    --cor-fundo-secundario: #E8DCCB;
+
+    --cor-destaque: #B56B45;
+    --cor-destaque-suave: #D9B99B;
+
+    --cor-texto: #3B2A20;
+    --cor-texto-secundario: #796858;
+
+    --cor-borda: #D6C4AF;
+    --cor-branco: #FFFFFF;
+    --cor-sucesso: #667C52;
+
+    --fonte-1: 'Lobster Two', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+}
+
+body {
+    background-color: var(--cor-sucesso);
+    font-family: sans-serif;
+}
+
+/* HEADER (celular: logo em cima, links embaixo) */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background-color: var(--cor-primaria);
+    border-bottom: 3px solid var(--amarelo);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--cor-branco);
+}
+
+.logo h1 {
+    font-size: 26px;
+}
+
+/* NAVEGAÇÃO */
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: var(--cor-branco);
+    font-family: var(--fonte-1);
+    font-size: 17px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    position: relative;
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.nav-bar a:hover {
+    color: var(--amarelo);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-bar a.ativo {
+    color: var(--amarelo);
+}
+
+.nav-bar a::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 2px;
+    height: 2px;
+    background-color: var(--amarelo);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-bar a:hover::after,
+.nav-bar a.ativo::after {
+    transform: scaleX(1);
+}
+
+.nav-bar a:focus-visible {
+    outline: 2px solid var(--amarelo);
+    outline-offset: 2px;
+}
+
+/* BANNER */
+
+.div-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+}
+
+/* BORDA */
+
+.borda {
+    border: none;
+    border-top: 2px solid var(--amarelo);
+    width: 88%;
+    margin: 20px auto;
+}
+
+.borda-1 {
+    border: none;
+    border-top: 2px solid var(--amarelo);
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* TÍTULO DA SEÇÃO */
+
+.h1 {
+    text-align: center;
+    color: var(--cor-branco);
+    font-size: 22px;
+    padding: 0 12px;
+}
+
+/* BOTÃO DO CARDÁPIO */
+
+.div-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-cardapio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-destaque));
+    border: 2px solid var(--amarelo);
+    border-radius: 50px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-cardapio:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: var(--cor-texto);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-cardapio:active {
+    transform: scale(0.97);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cardapio:focus-visible {
+    outline: 3px solid var(--cor-branco);
+    outline-offset: 4px;
+}
+
+.btn-cardapio p {
+    color: var(--cor-branco);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* CARDÁPIO */
+
+#cardapio {
+    display: none;
+    width: 92%;
+    max-width: 700px;
+    margin: 20px auto 40px;
+    padding: 6px 18px 24px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 2px solid var(--amarelo);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#cardapio.aberto {
+    display: block;
+}
+
+#cardapio h2 {
+    margin-top: 24px;
+    padding-bottom: 8px;
+    font-size: 22px;
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--amarelo);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    text-align: left;
+    border-bottom: 1px dashed var(--cor-borda);
+}
+
+.item-info h3 {
+    font-size: 18px;
+    color: var(--cor-texto);
+}
+
+.item-info p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--cor-texto-secundario);
+}
+
+.preco {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--cor-destaque);
+    white-space: nowrap;
+}
+
+/* CARROSSEL (celular: 1 card por vez) */
+
+#pratos-do-dia,
+#pratos {
+    padding-bottom: 40px;
+}
+
+.janela {
+    overflow: hidden;
+    width: 88%;
+    max-width: 1000px;
+    margin: 20px auto 0;
+    padding: 10px 0;
+}
+
+.trilho {
+    --visiveis: 1;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease;
+}
+
+.card {
+    flex: 0 0 calc((100% - (var(--visiveis) - 1) * 20px) / var(--visiveis));
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 2px solid var(--amarelo);
+    border-radius: 16px;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: var(--cor-primaria);
+}
+
+.card p {
+    flex: 1;
+    font-size: 15px;
+    color: var(--cor-texto-secundario);
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.btn-seta {
+    width: 48px;
+    height: 48px;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--cor-branco);
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--amarelo);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-seta:hover:not(:disabled) {
+    transform: scale(1.1);
+    background-color: var(--cor-texto);
+}
+
+.btn-seta:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-seta:focus-visible {
+    outline: 3px solid var(--cor-branco);
+    outline-offset: 3px;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    min-height: 220px;
+    padding: 20px 0;
+    background-color: var(--cor-terciaria);
+    border-top: 3px solid var(--amarelo);
+}
+
+footer h1,
+footer p {
+    text-align: center;
+    font-size: 20px;
+    color: var(--cor-branco);
+    font-family: var(--fonte-1);
+}
+
+/* ========== TABLET (600px ou mais) ========== */
+
+@media (min-width: 600px) {
+    .trilho {
+        --visiveis: 2;
+    }
+
+    .janela {
+        width: 80%;
+    }
+
+    .banner {
+        max-height: 200px;
+    }
+}
+
+/* ========== COMPUTADOR (700px ou mais) ========== */
+
+@media (min-width: 700px) {
+    html {
+        scroll-padding-top: 90px;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 15px 40px;
+    }
+
+    .logo h1 {
+        font-size: 32px;
+    }
+
+    .nav-bar {
+        gap: 8px;
+    }
+
+    .nav-bar a {
+        font-size: 20px;
+        padding: 8px 14px;
+    }
+
+    .nav-bar a::after {
+        left: 14px;
+        right: 14px;
+    }
+
+    .borda {
+        width: 80%;
+        margin: 30px auto;
+    }
+
+    .h1 {
+        font-size: 25px;
+    }
+
+    .btn-cardapio {
+        width: 250px;
+        height: 80px;
+    }
+
+    .btn-cardapio p {
+        font-size: 24px;
+    }
+
+    #cardapio {
+        width: 80%;
+        padding: 10px 30px 30px;
+    }
+
+    #cardapio h2 {
+        margin-top: 28px;
+        font-size: 26px;
+    }
+
+    .item {
+        gap: 16px;
+        padding: 14px 0;
+    }
+
+    .item-info h3 {
+        font-size: 20px;
+    }
+
+    .item-info p {
+        font-size: 15px;
+    }
+
+    .preco {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .card h3 {
+        font-size: 21px;
+    }
+
+    .btn-seta {
+        width: 52px;
+        height: 52px;
+        font-size: 30px;
+    }
+
+    footer {
+        min-height: 300px;
+    }
+
+    footer h1,
+    footer p {
+        font-size: 24px;
+    }
+}
+
+/* ========== TELA GRANDE (900px ou mais) ========== */
+
+@media (min-width: 900px) {
+    .trilho {
+        --visiveis: 3;
+    }
+
+    .banner {
+        max-height: 250px;
+    }
+}
